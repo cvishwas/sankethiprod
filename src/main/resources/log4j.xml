@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t][%x] %5p  %c:%L - %m%n" />
+		</layout>
+	</appender>
+
+	 
+	<appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender"> 
+		<param name="File" value="/bxp/ndd/ndd_dir/logs/sdsupport.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t][%x] %5p  %c:%L - %m%n" />
+		</layout>
+	</appender>
+ 	
+ 
+	<category name="org.hibernate.SQL" additivity="false">
+		<level value="debug" />
+	</category>
+
+	<category name="com.bnymellon" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="CONSOLE" />		
+	</category>
+	
+	<root>
+		<priority value="INFO" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+</log4j:configuration>
