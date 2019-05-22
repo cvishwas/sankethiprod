@@ -1,0 +1,3 @@
+https://medium.com/capital-one-tech/microservices-when-to-react-vs-orchestrate-c6b18308a14c
+https://spring.io/blog/2015/07/14/microservices-with-spring
+https://spring.io/guides/gs/rest-service/
